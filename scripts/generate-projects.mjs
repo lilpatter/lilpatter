@@ -68,7 +68,7 @@ for (const f of await readdir("projects")) if (!keep.has(f)) await rm(`projects/
 
 // Every tile links to the project on the website, never straight to a repository.
 const row = projects
-  .map((p) => `  <a href="${site}/#${p.id}"><img src="./projects/${p.id}.svg" width="32%" alt="${esc(p.name)}: ${esc(p.tagline)}" /></a>`)
+  .map((p) => `  <a href="${site}/${p.id}/"><img src="./projects/${p.id}.svg" width="32%" alt="${esc(p.name)}: ${esc(p.tagline)}" /></a>`)
   .join("\n");
 const readme = await readFile("README.md", "utf8");
 const next = readme.replace(
