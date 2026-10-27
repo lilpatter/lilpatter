@@ -182,6 +182,10 @@ function handleLine() {
   const followers = compact(user.followers.totalCount), following = compact(user.following.totalCount);
   let x = tx, parts = [];
   const run = (str, cls, weight = "regular") => {
+    // SVG drops leading spaces in a <text>, so turn them into an offset.
+    const lead = str.length - str.trimStart().length;
+    x += textWidth(str.slice(0, lead), size, weight);
+    str = str.trimStart();
     parts.push(`<text x="${x.toFixed(1)}" y="${y}" font-size="${size}" class="${cls}">${esc(str)}</text>`);
     x += textWidth(str, size, weight);
   };
