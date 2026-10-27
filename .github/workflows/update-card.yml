@@ -6,7 +6,10 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - scripts/generate-card.mjs
+      - scripts/**
+  # The site repo can trigger this after projects.json changes.
+  repository_dispatch:
+    types: [projects-updated]
 
 permissions:
   contents: write
@@ -23,9 +26,11 @@ jobs:
         run: node scripts/generate-card.mjs "${{ github.repository_owner }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate project tiles
+        run: node scripts/generate-projects.mjs
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add card.svg
+          git add card.svg projects README.md
           git diff --cached --quiet || (git commit -m "Update profile card" && git push)

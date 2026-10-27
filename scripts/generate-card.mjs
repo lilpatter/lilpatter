@@ -141,7 +141,7 @@ const levels = {
 
 const name = config.name || user.name || user.login;
 const initials = (config.initials || name).slice(0, 2).toUpperCase();
-const bio = wrap(config.bio || user.bio || "Building things on GitHub.", 62, 2);
+const bio = wrap(config.bio || user.bio || "Native apps for Apple platforms and Windows.", 62, 2);
 
 const cell = 13, gap = 3.6, step = cell + gap;
 const gridW = calendar.weeks.length * step - gap;
