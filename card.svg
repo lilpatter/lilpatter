@@ -44,8 +44,16 @@
 
   <!-- identity -->
   <circle cx="111" cy="173" r="67" fill="#2c2e33"/>
-  <circle cx="111" cy="173" r="64" fill="url(#mono)"/>
-  <text x="111" y="190" text-anchor="middle" font-size="48" font-weight="700" letter-spacing="-1" fill="#ffffff">PG</text>
+
+<image
+  href="https://github.com/lilpatter.png"
+  x="47"
+  y="109"
+  width="128"
+  height="128"
+  preserveAspectRatio="xMidYMid slice"
+  clip-path="url(#avatar)"
+/>
   <text x="231" y="149" font-size="52" font-weight="700" letter-spacing="-1.2" class="strong">PG</text>
   <text x="231.0" y="191" font-size="18" class="strong">@lilpatter</text>
   <text x="331.0" y="191" font-size="18" class="muted">•</text>
