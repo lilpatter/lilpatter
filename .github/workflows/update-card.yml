@@ -1,4 +1,4 @@
-name: Update profile card
+name: Update project tiles
 
 on:
   schedule:
@@ -22,15 +22,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Generate card
-        run: node scripts/generate-card.mjs "${{ github.repository_owner }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate project tiles
         run: node scripts/generate-projects.mjs
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add card.svg projects README.md
-          git diff --cached --quiet || (git commit -m "Update profile card" && git push)
+          git add projects README.md
+          git diff --cached --quiet || (git commit -m "Update project tiles" && git push)
