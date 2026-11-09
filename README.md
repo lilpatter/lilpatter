@@ -6,9 +6,10 @@
 
 <!-- projects:start -->
 <p align="center">
-  <a href="https://lilpatter.github.io/catalyst/"><img src="./projects/catalyst.svg" width="32%" alt="Catalyst: One home for movies and series." /></a>
-  <a href="https://lilpatter.github.io/hangar/"><img src="./projects/hangar.svg" width="32%" alt="Hangar: Every Steam account, one click away." /></a>
-  <a href="https://lilpatter.github.io/verdant/"><img src="./projects/verdant.svg" width="32%" alt="Verdant: Your GeForce driver, always current." /></a>
+  <a href="https://lilpatter.github.io/catalyst/"><img src="./projects/catalyst.svg" width="48%" alt="Catalyst: One home for movies and series." /></a>
+  <a href="https://lilpatter.github.io/hangar/"><img src="./projects/hangar.svg" width="48%" alt="Hangar: Every Steam account, one click away." /></a>
+  <a href="https://lilpatter.github.io/verdant/"><img src="./projects/verdant.svg" width="48%" alt="Verdant: Your GeForce driver, always current." /></a>
+  <a href="https://lilpatter.github.io/keepsake/"><img src="./projects/keepsake.svg" width="48%" alt="Keepsake: Your emulator saves, in one place." /></a>
 </p>
 <!-- projects:end -->
 
