@@ -30,24 +30,28 @@ async function dataUrl(path) {
   return `data:${res.headers.get("content-type") || "image/png"};base64,${Buffer.from(await res.arrayBuffer()).toString("base64")}`;
 }
 
+// Blends two #rrggbb colours: t of `a` into `b`.
+function mix(a, b, t) {
+  const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const [x, y] = [rgb(a), rgb(b)];
+  return "#" + x.map((v, i) => Math.round(v * t + y[i] * (1 - t)).toString(16).padStart(2, "0")).join("");
+}
+
 function tile(p, icon) {
   const W = 340, H = 132;
   const tagline = wrap(p.tagline, 27, 2);
+  // A muted, solid tint of the app's accent colour.
+  const accent = /^#[0-9a-f]{6}$/i.test(p.accent || "") ? p.accent : "#9cc6f5";
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(p.name)}: ${esc(p.tagline)}">
   <title>${esc(p.name)}</title>
   <defs>
     <clipPath id="icon"><rect x="22" y="30" width="72" height="72" rx="16.2"/></clipPath>
-    <radialGradient id="glow" cx="${W}" cy="0" r="220" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="${esc(p.accent || "#9cc6f5")}" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="${esc(p.accent || "#9cc6f5")}" stop-opacity="0"/>
-    </radialGradient>
     <style>
       text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
       .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
     </style>
   </defs>
-  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="#161b22" stroke="#30363d"/>
-  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="${mix(accent, "#161b22", 0.11)}" stroke="${mix(accent, "#30363d", 0.18)}"/>
   <image href="${icon}" x="22" y="30" width="72" height="72" clip-path="url(#icon)" preserveAspectRatio="xMidYMid slice"/>
   <rect x="22" y="30" width="72" height="72" rx="16.2" fill="none" stroke="#f0f6fc" stroke-opacity="0.1"/>
   <circle cx="${W - 24}" cy="26" r="4.5" fill="${STATUS[p.status] || "#6e7681"}"/>
