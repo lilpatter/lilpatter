@@ -67,8 +67,10 @@ for (const p of projects) {
 for (const f of await readdir("projects")) if (!keep.has(f)) await rm(`projects/${f}`);
 
 // Every tile links to the project on the website, never straight to a repository.
+// Rows of three, or two when that leaves no tile alone on the last row (four apps make a 2 × 2 grid).
+const perRow = projects.length % 3 === 1 && projects.length % 2 === 0 ? 2 : 3;
 const row = projects
-  .map((p) => `  <a href="${site}/${p.id}/"><img src="./projects/${p.id}.svg" width="32%" alt="${esc(p.name)}: ${esc(p.tagline)}" /></a>`)
+  .map((p) => `  <a href="${site}/${p.id}/"><img src="./projects/${p.id}.svg" width="${perRow === 2 ? 48 : 32}%" alt="${esc(p.name)}: ${esc(p.tagline)}" /></a>`)
   .join("\n");
 const readme = await readFile("README.md", "utf8");
 const next = readme.replace(
