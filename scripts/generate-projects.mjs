@@ -4,6 +4,8 @@ import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 
 const site = (process.env.SITE_URL || "https://lilpatter.github.io").replace(/\/$/, "");
 const { projects } = await (await fetch(`${site}/projects.json`)).json();
+// Each app's accent colour, which the site takes from its icon (projects.json only holds overrides).
+const accents = await fetch(`${site}/accents.json`).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const STATUS = { available: "#3fb950", "in-development": "#d29922", beta: "#4493f8" };
@@ -41,7 +43,8 @@ function tile(p, icon) {
   const W = 340, H = 132;
   const tagline = wrap(p.tagline, 27, 2);
   // A muted, solid tint of the app's accent colour.
-  const accent = /^#[0-9a-f]{6}$/i.test(p.accent || "") ? p.accent : "#9cc6f5";
+  const color = p.accent || accents[p.id];
+  const accent = /^#[0-9a-f]{6}$/i.test(color || "") ? color : "#9cc6f5";
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(p.name)}: ${esc(p.tagline)}">
   <title>${esc(p.name)}</title>
   <defs>
