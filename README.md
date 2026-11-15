@@ -11,6 +11,7 @@
   <a href="https://lilpatter.github.io/verdant/"><img src="./projects/verdant.svg" width="32%" alt="Verdant: Your GeForce driver, always current." /></a>
   <a href="https://lilpatter.github.io/keepsake/"><img src="./projects/keepsake.svg" width="32%" alt="Keepsake: Your emulator saves, in one place." /></a>
   <a href="https://lilpatter.github.io/prism/"><img src="./projects/prism.svg" width="32%" alt="Prism: Your games, in their own colours." /></a>
+  <a href="https://lilpatter.github.io/parley/"><img src="./projects/parley.svg" width="32%" alt="Parley: Discord, light." /></a>
 </p>
 <!-- projects:end -->
 
