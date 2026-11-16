@@ -8,10 +8,10 @@
 <p align="center">
   <a href="https://lilpatter.github.io/catalyst/"><img src="./projects/catalyst.svg" width="32%" alt="Catalyst: One home for movies and series." /></a>
   <a href="https://lilpatter.github.io/hangar/"><img src="./projects/hangar.svg" width="32%" alt="Hangar: Every Steam account, one click away." /></a>
-  <a href="https://lilpatter.github.io/verdant/"><img src="./projects/verdant.svg" width="32%" alt="Verdant: Your GeForce driver, always current." /></a>
-  <a href="https://lilpatter.github.io/keepsake/"><img src="./projects/keepsake.svg" width="32%" alt="Keepsake: Your emulator saves, in one place." /></a>
-  <a href="https://lilpatter.github.io/prism/"><img src="./projects/prism.svg" width="32%" alt="Prism: Your games, in their own colours." /></a>
-  <a href="https://lilpatter.github.io/parley/"><img src="./projects/parley.svg" width="32%" alt="Parley: Discord, light." /></a>
+  <a href="https://lilpatter.github.io/verdant/"><img src="./projects/verdant.svg" width="32%" alt="Verdant: GeForce driver updates, without the NVIDIA App." /></a>
+  <a href="https://lilpatter.github.io/keepsake/"><img src="./projects/keepsake.svg" width="32%" alt="Keepsake: Your emulator games and saves, in one place." /></a>
+  <a href="https://lilpatter.github.io/prism/"><img src="./projects/prism.svg" width="32%" alt="Prism: Colour profiles for every game, switched automatically." /></a>
+  <a href="https://lilpatter.github.io/parley/"><img src="./projects/parley.svg" width="32%" alt="Parley: An unofficial, lightweight Discord client for Windows." /></a>
 </p>
 <!-- projects:end -->
 
