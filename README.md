@@ -16,5 +16,9 @@
 <!-- projects:end -->
 
 <p align="center">
+  <a href="https://ko-fi.com/O6N02AUO5M"><img src="https://img.shields.io/badge/Support%20me%20on%20Ko--fi-850a3e?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Support me on Ko-fi" /></a>
+</p>
+
+<p align="center">
   <sub><a href="https://lilpatter.github.io">lilpatter.github.io</a></sub>
 </p>
