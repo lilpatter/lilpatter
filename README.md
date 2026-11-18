@@ -6,7 +6,7 @@
 
 <!-- projects:start -->
 <p align="center">
-  <a href="https://lilpatter.github.io/keepsake/"><img src="./projects/keepsake-spotlight.svg" width="97%" alt="Keepsake 1.0.0: Keepsake 1.1 is out of testing" /></a>
+  <a href="https://lilpatter.github.io/keepsake/"><img src="./projects/keepsake-spotlight.svg" width="97%" alt="Keepsake 1.1.0: Keepsake 1.1 is out of testing" /></a>
 </p>
 <p align="center">
   <a href="https://lilpatter.github.io/catalyst/"><img src="./projects/catalyst.svg" width="32%" alt="Catalyst: One home for movies and series." /></a>
